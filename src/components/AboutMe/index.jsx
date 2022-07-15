@@ -24,12 +24,19 @@ const Info = [
   },
 ]
 
+const aboutMe = [
+  "My name is Duy Nguyen I'm a Front End Engineer based in Ho Chi Minh City ☀️. I describe myself as a passionate developer who loves creating beautiful and performant products with delightful user experiences.",
+  "I'm a big fan of football ⚽️. In my free time, I like to play football with my closest friends. I also like to watch football live on TV and my favorite team is Manchester United 🏟🔱.",
+]
+
 const AboutMe = () => {
   return (
     <div className="content-container">
-      <div className="about-me">
-        <h2>About me</h2>
-      </div>
+      <Fade top>
+        <div className="about-me">
+          <h2>About me</h2>
+        </div>
+      </Fade>
       <div className="content">
         <div className="detail-info">
           <Fade left>
@@ -41,14 +48,16 @@ const AboutMe = () => {
             ))}
           </Fade>
         </div>
-        <Fade right>
-          <div className="about">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-            omnis nostrum necessitatibus quidem porro architecto eos delectus
-            recusandae, vel odit impedit, doloremque quam pariatur cumque
-            corporis laboriosam unde ut fugiat?
-          </div>
-        </Fade>
+        <p className="about">
+          <Fade top>
+            <h1 className='hi-there'>Hi There</h1>
+          </Fade>
+          {aboutMe.map((item, index) => (
+            <Fade right key={index}>
+              <p>{item}</p>
+            </Fade>
+          ))}
+        </p>
       </div>
     </div>
   )

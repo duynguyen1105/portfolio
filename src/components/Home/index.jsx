@@ -1,11 +1,13 @@
-import './styles.scss'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-reveal'
+import RubberBand from 'react-reveal/RubberBand'
+import Typical from 'react-typical'
 import background from '../../assets/anni.JPG'
 import avatar from '../../assets/avatar.jpg'
 import iconFacebook from '../../assets/icon-facebook.svg'
 import iconGithub from '../../assets/icon-github.svg'
-import iconLinkedin from '../../assets/icon-linkedin.svg'
 import iconInstagram from '../../assets/icon-instagram.svg'
+import iconLinkedin from '../../assets/icon-linkedin.svg'
+import './styles.scss'
 
 const Social = [
   {
@@ -40,15 +42,34 @@ const Home = () => {
             <img src={avatar} alt="Avatar" />
           </div>
         </Fade>
-        <h1 className="name">Nguyễn Duy Nguyên</h1>
-        <div className="job">Front-end Developer</div>
-        <div className="social">
-          {Social.map((item, index) => (
-            <a href={item.url} key={index} className='social-icon'>
-              <img src={item.icon} alt="Icon" />
-            </a>
-          ))}
-        </div>
+        <RubberBand>
+          <h1 className="name">Nguyen Duy Nguyen</h1>
+        </RubberBand>
+        <Fade left>
+          <div className="job">
+            {/* Frontend Developer */}
+            <Typical
+              loop={Infinity}
+              steps={[
+                'Frontend Developer 💻',
+                1000,
+                'Football Lover ⚽️',
+                1000,
+                'Turtle 🐢',
+                1000,
+              ]}
+            />
+          </div>
+        </Fade>
+        <Fade right>
+          <div className="social">
+            {Social.map((item, index) => (
+              <a href={item.url} key={index} className="social-icon">
+                <img src={item.icon} alt="Icon" />
+              </a>
+            ))}
+          </div>
+        </Fade>
       </div>
     </div>
   )

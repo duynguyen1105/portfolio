@@ -8,8 +8,6 @@
 }
 
 .content {
-  margin-top: 5rem;
-
   .detail-info {
     .info-row {
       margin-bottom: 1rem;
@@ -33,6 +31,7 @@
 @media screen and (min-width: 1024px) {
   .content {
     display: flex;
+    margin-top: 5rem;
 
     .detail-info {
       width: 40%;
@@ -54,6 +53,12 @@
     .about {
       margin-left: 2rem;
       width: 60%;
+
+      .hi-there {
+        text-align: center;
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
