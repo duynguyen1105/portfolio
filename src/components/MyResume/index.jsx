@@ -30,9 +30,24 @@ const MyResume = () => {
               }
             >
               <h3 className="title">{item.title}</h3>
-              <p className="company-name">{item.company}</p>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="company-name"
+              >
+                <p>{item.company}</p>
+              </a>
               <p className="time">{`${item.startDate} - ${item.endDate}`}</p>
               <div className="description">{item.description}</div>
+              {item.technology && (
+                <div className="tech-skills">
+                  <p>
+                    <span>Technology: </span>
+                    {item.technology}
+                  </p>
+                </div>
+              )}
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>

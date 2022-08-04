@@ -41,9 +41,17 @@
   }
 
   .company-name {
+    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     color: #888686;
+  }
+
+  .tech-skills {
+    span {
+      font-weight: 700;
+      font-size: large;
+    }
   }
 
   .time {
