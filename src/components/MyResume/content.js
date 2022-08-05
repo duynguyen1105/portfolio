@@ -12,7 +12,7 @@ const workExperience = [
     logo: HHGLogo,
     url: 'https://hellohealthgroup.com/',
     description:
-      "I'm working as a Frontend Developer at HHHG. I have implemented some important features of HelloBacsi Pro such as Booking doctor, TeleMedicine, Widget for partner,... I also create and maintain commonly used components.",
+      "I'm working as a Frontend Developer at HHG. I have implemented some important features of HelloBacsi Pro such as Booking doctor, TeleMedicine, Widget for partner,... I also create and maintain commonly used components.",
     technology: 'ReactJS, TypeScript, NextJS',
   },
   {
