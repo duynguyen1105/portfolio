@@ -24,7 +24,7 @@ const Social = [
   },
   {
     icon: iconInstagram,
-    url: 'https://www.instagram.com/duynguyen1105/',
+    url: 'https://www.instagram.com/duynguyen.1105/',
   },
 ]
 
