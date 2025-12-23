@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { getAllBlogPosts } from "@/data/blog";
+import { Link } from "@/i18n/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,6 +27,8 @@ const itemVariants = {
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();
+  const t = useTranslations("blog");
+  const locale = useLocale();
 
   return (
     <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -36,9 +39,9 @@ export default function BlogPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h1>
           <p className="text-[var(--muted-foreground)] max-w-md mx-auto">
-            Thoughts, tutorials, and insights about web development and software engineering.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -59,15 +62,18 @@ export default function BlogPage() {
                 <div className="flex items-center gap-4 text-sm text-[var(--muted-foreground)] mb-3">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    {new Date(post.date).toLocaleDateString(
+                      locale === "vi" ? "vi-VN" : "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}
                   </span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    {Math.ceil(post.content.length / 1000)} min read
+                    {Math.ceil(post.content.length / 1000)} {t("minRead")}
                   </span>
                 </div>
 
@@ -92,7 +98,7 @@ export default function BlogPage() {
                   </div>
 
                   <span className="flex items-center gap-1 text-[var(--accent)] font-medium">
-                    Read more
+                    {t("readMore")}
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>

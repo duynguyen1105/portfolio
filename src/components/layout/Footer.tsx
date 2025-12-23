@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Facebook, Instagram, Heart } from "lucide-react";
 import { socialLinks } from "@/data/personal";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
@@ -12,6 +13,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Footer() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-[var(--border)] bg-[var(--card)]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -36,11 +39,11 @@ export function Footer() {
         </div>
 
         <p className="text-sm text-[var(--muted-foreground)] flex items-center gap-1">
-          Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by Duy Nguyen
+          {t("madeWith")} <Heart className="w-4 h-4 text-red-500 fill-red-500" /> {t("by")}
         </p>
 
         <p className="text-sm text-[var(--muted-foreground)]">
-          © {new Date().getFullYear()} All rights reserved.
+          © {new Date().getFullYear()} {t("rights")}
         </p>
       </div>
     </footer>

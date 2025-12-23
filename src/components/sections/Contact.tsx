@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from "lucide-react";
 import { personalInfo } from "@/data/personal";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   name: string;
@@ -13,15 +14,16 @@ interface FormData {
   message: string;
 }
 
-const contactInfo = [
-  { icon: Mail, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-  { icon: Phone, label: "Phone", value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-  { icon: MapPin, label: "Location", value: personalInfo.location },
-];
-
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const t = useTranslations("contact");
+
+  const contactInfo = [
+    { icon: Mail, label: t("form.email"), value: personalInfo.email, href: `mailto:${personalInfo.email}` },
+    { icon: Phone, label: t("form.name"), value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
+    { icon: MapPin, label: "Location", value: personalInfo.location },
+  ];
 
   const {
     register,
@@ -51,10 +53,10 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
           <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full mb-4" />
           <p className="text-[var(--muted-foreground)] max-w-md mx-auto">
-            Have a question or want to work together? Feel free to reach out!
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -66,7 +68,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+            <h3 className="text-xl font-bold mb-6">{t("contactInfo")}</h3>
             <div className="space-y-4">
               {contactInfo.map((item) => (
                 <motion.div
@@ -107,8 +109,8 @@ export function Contact() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
                 <input
-                  {...register("name", { required: "Name is required" })}
-                  placeholder="Your Name"
+                  {...register("name", { required: t("errors.nameRequired") })}
+                  placeholder={t("form.name")}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.name && (
@@ -119,13 +121,13 @@ export function Contact() {
               <div>
                 <input
                   {...register("email", {
-                    required: "Email is required",
+                    required: t("errors.emailRequired"),
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
+                      message: t("errors.emailInvalid"),
                     },
                   })}
-                  placeholder="Your Email"
+                  placeholder={t("form.email")}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.email && (
@@ -135,8 +137,8 @@ export function Contact() {
 
               <div>
                 <input
-                  {...register("subject", { required: "Subject is required" })}
-                  placeholder="Subject"
+                  {...register("subject", { required: t("errors.subjectRequired") })}
+                  placeholder={t("form.subject")}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.subject && (
@@ -146,8 +148,8 @@ export function Contact() {
 
               <div>
                 <textarea
-                  {...register("message", { required: "Message is required" })}
-                  placeholder="Your Message"
+                  {...register("message", { required: t("errors.messageRequired") })}
+                  placeholder={t("form.message")}
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all resize-none"
                 />
@@ -166,17 +168,17 @@ export function Contact() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Sending...
+                    {t("form.sending")}
                   </>
                 ) : isSubmitted ? (
                   <>
                     <CheckCircle className="w-5 h-5" />
-                    Message Sent!
+                    {t("form.sent")}
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Send Message
+                    {t("form.send")}
                   </>
                 )}
               </motion.button>

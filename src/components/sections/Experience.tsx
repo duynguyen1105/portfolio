@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { experiences } from "@/data/experience";
+import { useTranslations } from "next-intl";
 
 export function Experience() {
+  const t = useTranslations("experience");
+
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -16,7 +19,7 @@ export function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
           <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full" />
         </motion.div>
 

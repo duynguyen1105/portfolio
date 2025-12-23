@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "getInTouch": "Get in Touch",
+    "learnMore": "Learn More",
+    "roles": {
+      "softwareEngineer": "Software Engineer",
+      "fullStackDeveloper": "Full-Stack Developer",
+      "problemSolver": "Problem Solver"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Hi There!",
+    "bio1": "I'm a Software Engineer based in Ho Chi Minh City with over 3 years of experience in full-stack and front-end development. I'm passionate about building scalable applications and improving codebases using modern technologies like Node.js, React.js, TypeScript, and AWS services.",
+    "bio2": "Currently working at Raksul Vietnam on the JOSYS SaaS product, where I handle both Front-end and Back-end development. I enjoy solving complex problems and creating tools that improve team efficiency.",
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "companiesWorked": "Companies Worked"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "birthday": "Birthday"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "softSkills": "Soft Skills",
+    "categories": {
+      "programmingLanguages": "Programming Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "toolsCloud": "Tools & Cloud"
+    },
+    "soft": {
+      "englishCommunication": "English Communication",
+      "taskManagement": "Task Management",
+      "teamCollaboration": "Team Collaboration",
+      "documentation": "Documentation",
+      "problemSolving": "Problem Solving"
+    }
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "education": {
+    "title": "Education",
+    "certificates": "Certificates",
+    "professionalAchievements": "Professional achievements",
+    "labels": {
+      "degree": "Degree:",
+      "field": "Field:",
+      "grade": "Grade:"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a question or want to work together? Feel free to reach out!",
+    "contactInfo": "Contact Information",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "sent": "Message Sent!"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts, tutorials, and insights about web development and software engineering.",
+    "readMore": "Read more",
+    "backToBlog": "Back to Blog",
+    "minRead": "min read"
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "by": "by Duy Nguyen",
+    "rights": "All rights reserved."
+  }
+}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Github, Linkedin, Facebook, Instagram, ChevronDown } from "lucide-react";
 import { TypeWriter } from "@/components/ui/TypeWriter";
 import { personalInfo, socialLinks } from "@/data/personal";
+import { useTranslations } from "next-intl";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
@@ -13,9 +14,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   instagram: Instagram,
 };
 
-const roles = ["Software Engineer", "Full-Stack Developer", "Problem Solver"];
-
 export function Hero() {
+  const t = useTranslations("hero");
+
+  const roles = [
+    t("roles.softwareEngineer"),
+    t("roles.fullStackDeveloper"),
+    t("roles.problemSolver"),
+  ];
+
   return (
     <section
       id="home"
@@ -58,7 +65,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-4xl md:text-6xl font-bold mb-4"
         >
-          Hi, I&apos;m{" "}
+          {t("greeting")}{" "}
           <span className="text-[var(--accent)]">{personalInfo.displayName}</span>
         </motion.h1>
 
@@ -106,13 +113,13 @@ export function Hero() {
             href="/#contact"
             className="px-8 py-3 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] font-medium hover:opacity-90 transition-opacity"
           >
-            Get in Touch
+            {t("getInTouch")}
           </a>
           <a
             href="/#about"
             className="px-8 py-3 rounded-full border border-[var(--border)] hover:bg-[var(--card)] transition-colors"
           >
-            Learn More
+            {t("learnMore")}
           </a>
         </motion.div>
       </div>

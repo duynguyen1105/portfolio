@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, CheckCircle } from "lucide-react";
 import { education, certificates } from "@/data/education";
+import { useTranslations } from "next-intl";
 
 export function Education() {
+  const t = useTranslations("education");
+
   return (
     <section id="education" className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--card)]">
       <div className="max-w-4xl mx-auto">
@@ -15,7 +18,7 @@ export function Education() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
           <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full" />
         </motion.div>
 
@@ -34,7 +37,7 @@ export function Education() {
                 <GraduationCap className="w-8 h-8 text-[var(--accent)]" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Education</h3>
+                <h3 className="text-xl font-bold">{t("title")}</h3>
                 <p className="text-sm text-[var(--muted-foreground)]">
                   {education.period}
                 </p>
@@ -45,19 +48,19 @@ export function Education() {
             <div className="space-y-2 text-[var(--muted-foreground)]">
               <p>
                 <span className="font-medium text-[var(--foreground)]">
-                  Degree:
+                  {t("labels.degree")}
                 </span>{" "}
                 {education.degree}
               </p>
               <p>
                 <span className="font-medium text-[var(--foreground)]">
-                  Field:
+                  {t("labels.field")}
                 </span>{" "}
                 {education.field}
               </p>
               <p>
                 <span className="font-medium text-[var(--foreground)]">
-                  Grade:
+                  {t("labels.grade")}
                 </span>{" "}
                 {education.grade}
               </p>
@@ -78,9 +81,9 @@ export function Education() {
                 <Award className="w-8 h-8 text-[var(--accent)]" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Certificates</h3>
+                <h3 className="text-xl font-bold">{t("certificates")}</h3>
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  Professional achievements
+                  {t("professionalAchievements")}
                 </p>
               </div>
             </div>

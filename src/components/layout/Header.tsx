@@ -4,13 +4,25 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { navLinks } from "@/data/personal";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+
+const navKeys = [
+  { key: "home", href: "/#home" },
+  { key: "about", href: "/#about" },
+  { key: "skills", href: "/#skills" },
+  { key: "experience", href: "/#experience" },
+  { key: "education", href: "/#education" },
+  { key: "contact", href: "/#contact" },
+  { key: "blog", href: "/blog" },
+] as const;
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations("nav");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,22 +52,24 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <motion.div key={link.name} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
+          {navKeys.map((link) => (
+            <motion.div key={link.key} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={link.href}
                 className="relative text-sm font-medium hover:text-[var(--accent)] transition-colors group"
               >
-                {link.name}
+                {t(link.key)}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
               </Link>
             </motion.div>
           ))}
+          <LanguageSwitcher />
           <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -77,9 +91,9 @@ export function Header() {
             className="md:hidden bg-[var(--background)]/95 backdrop-blur-md border-t border-[var(--border)]"
           >
             <div className="px-4 py-4 flex flex-col gap-2">
-              {navLinks.map((link, index) => (
+              {navKeys.map((link, index) => (
                 <motion.div
-                  key={link.name}
+                  key={link.key}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -90,7 +104,7 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block py-2 text-lg font-medium hover:text-[var(--accent)] transition-colors"
                   >
-                    {link.name}
+                    {t(link.key)}
                   </Link>
                 </motion.div>
               ))}

@@ -3,18 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Calendar, Briefcase, GraduationCap } from "lucide-react";
 import { personalInfo } from "@/data/personal";
-
-const infoItems = [
-  { icon: Mail, label: "Email", value: personalInfo.email },
-  { icon: Phone, label: "Phone", value: personalInfo.phone },
-  { icon: MapPin, label: "Location", value: personalInfo.location },
-  { icon: Calendar, label: "Birthday", value: personalInfo.birthday },
-];
-
-const stats = [
-  { icon: Briefcase, value: "3+", label: "Years Experience" },
-  { icon: GraduationCap, value: "4", label: "Companies Worked" },
-];
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,6 +25,20 @@ const itemVariants = {
 };
 
 export function About() {
+  const t = useTranslations("about");
+
+  const infoItems = [
+    { icon: Mail, label: t("info.email"), value: personalInfo.email },
+    { icon: Phone, label: t("info.phone"), value: personalInfo.phone },
+    { icon: MapPin, label: t("info.location"), value: personalInfo.location },
+    { icon: Calendar, label: t("info.birthday"), value: personalInfo.birthday },
+  ];
+
+  const stats = [
+    { icon: Briefcase, value: "3+", label: t("stats.yearsExperience") },
+    { icon: GraduationCap, value: "4", label: t("stats.companiesWorked") },
+  ];
+
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -46,7 +49,7 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
           <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full" />
         </motion.div>
 
@@ -62,17 +65,20 @@ export function About() {
               variants={itemVariants}
               className="text-2xl font-bold mb-6"
             >
-              Hi There!
+              {t("subtitle")}
             </motion.h3>
-            {personalInfo.bio.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                variants={itemVariants}
-                className="text-[var(--muted-foreground)] mb-4 leading-relaxed"
-              >
-                {paragraph}
-              </motion.p>
-            ))}
+            <motion.p
+              variants={itemVariants}
+              className="text-[var(--muted-foreground)] mb-4 leading-relaxed"
+            >
+              {t("bio1")}
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-[var(--muted-foreground)] mb-4 leading-relaxed"
+            >
+              {t("bio2")}
+            </motion.p>
 
             {/* Stats */}
             <motion.div

@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn",
+    "contact": "Liên hệ",
+    "blog": "Blog"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "getInTouch": "Liên hệ ngay",
+    "learnMore": "Tìm hiểu thêm",
+    "roles": {
+      "softwareEngineer": "Kỹ sư phần mềm",
+      "fullStackDeveloper": "Lập trình viên Full-Stack",
+      "problemSolver": "Giải quyết vấn đề"
+    }
+  },
+  "about": {
+    "title": "Về tôi",
+    "subtitle": "Xin chào!",
+    "bio1": "Tôi là một Kỹ sư phần mềm tại TP. Hồ Chí Minh với hơn 3 năm kinh nghiệm trong phát triển full-stack và front-end. Tôi đam mê xây dựng các ứng dụng có khả năng mở rộng và cải thiện codebase bằng các công nghệ hiện đại như Node.js, React.js, TypeScript và các dịch vụ AWS.",
+    "bio2": "Hiện đang làm việc tại Raksul Vietnam với sản phẩm SaaS JOSYS, nơi tôi phụ trách cả phát triển Front-end và Back-end. Tôi thích giải quyết các vấn đề phức tạp và tạo ra các công cụ cải thiện hiệu suất làm việc của team.",
+    "stats": {
+      "yearsExperience": "Năm kinh nghiệm",
+      "companiesWorked": "Công ty đã làm việc"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Điện thoại",
+      "location": "Địa điểm",
+      "birthday": "Ngày sinh"
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng",
+    "softSkills": "Kỹ năng mềm",
+    "categories": {
+      "programmingLanguages": "Ngôn ngữ lập trình",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "toolsCloud": "Công cụ & Cloud"
+    },
+    "soft": {
+      "englishCommunication": "Giao tiếp tiếng Anh",
+      "taskManagement": "Quản lý công việc",
+      "teamCollaboration": "Làm việc nhóm",
+      "documentation": "Tài liệu hóa",
+      "problemSolving": "Giải quyết vấn đề"
+    }
+  },
+  "experience": {
+    "title": "Kinh nghiệm"
+  },
+  "education": {
+    "title": "Học vấn",
+    "certificates": "Chứng chỉ",
+    "professionalAchievements": "Thành tích chuyên môn",
+    "labels": {
+      "degree": "Bằng cấp:",
+      "field": "Chuyên ngành:",
+      "grade": "Xếp loại:"
+    }
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Có câu hỏi hoặc muốn hợp tác? Hãy liên hệ với tôi!",
+    "contactInfo": "Thông tin liên hệ",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Email của bạn",
+      "subject": "Tiêu đề",
+      "message": "Nội dung tin nhắn",
+      "send": "Gửi tin nhắn",
+      "sending": "Đang gửi...",
+      "sent": "Đã gửi!"
+    },
+    "errors": {
+      "nameRequired": "Vui lòng nhập họ tên",
+      "emailRequired": "Vui lòng nhập email",
+      "emailInvalid": "Email không hợp lệ",
+      "subjectRequired": "Vui lòng nhập tiêu đề",
+      "messageRequired": "Vui lòng nhập nội dung"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Suy nghĩ, hướng dẫn và kiến thức về phát triển web và kỹ thuật phần mềm.",
+    "readMore": "Đọc thêm",
+    "backToBlog": "Quay lại Blog",
+    "minRead": "phút đọc"
+  },
+  "footer": {
+    "madeWith": "Được tạo với",
+    "by": "bởi Duy Nguyen",
+    "rights": "Bản quyền được bảo lưu."
+  }
+}

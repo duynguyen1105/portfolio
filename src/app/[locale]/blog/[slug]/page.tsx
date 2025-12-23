@@ -2,15 +2,18 @@
 
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getBlogPost } from "@/data/blog";
 import { notFound } from "next/navigation";
+import { Link } from "@/i18n/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
   const post = getBlogPost(slug);
+  const t = useTranslations("blog");
+  const locale = useLocale();
 
   if (!post) {
     notFound();
@@ -29,21 +32,24 @@ export default function BlogPostPage() {
             className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Blog
+            {t("backToBlog")}
           </Link>
 
           <div className="flex items-center gap-4 text-sm text-[var(--muted-foreground)] mb-4">
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {new Date(post.date).toLocaleDateString(
+                locale === "vi" ? "vi-VN" : "en-US",
+                {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                }
+              )}
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
-              {Math.ceil(post.content.length / 1000)} min read
+              {Math.ceil(post.content.length / 1000)} {t("minRead")}
             </span>
           </div>
 
