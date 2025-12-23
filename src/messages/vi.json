@@ -14,7 +14,7 @@
     "learnMore": "Tìm hiểu thêm",
     "roles": {
       "softwareEngineer": "Kỹ sư phần mềm",
-      "fullStackDeveloper": "Lập trình viên Full-Stack",
+      "frontendEngineer": "Lập trình viên Frontend",
       "problemSolver": "Giải quyết vấn đề"
     }
   },
@@ -62,7 +62,12 @@
       "degree": "Bằng cấp:",
       "field": "Chuyên ngành:",
       "grade": "Xếp loại:"
-    }
+    },
+    "university": "Trường Đại học Bách Khoa TP. Hồ Chí Minh",
+    "degree": "Kỹ sư",
+    "field": "Khoa học Máy tính",
+    "grade": "Khá",
+    "period": "2017 - 2021"
   },
   "contact": {
     "title": "Liên hệ",

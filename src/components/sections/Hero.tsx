@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Github, Linkedin, Facebook, Instagram, ChevronDown } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Facebook,
+  Instagram,
+  ChevronDown,
+} from "lucide-react";
 import { TypeWriter } from "@/components/ui/TypeWriter";
 import { personalInfo, socialLinks } from "@/data/personal";
 import { useTranslations } from "next-intl";
@@ -19,7 +25,7 @@ export function Hero() {
 
   const roles = [
     t("roles.softwareEngineer"),
-    t("roles.fullStackDeveloper"),
+    t("roles.frontendEngineer"),
     t("roles.problemSolver"),
   ];
 
@@ -66,7 +72,9 @@ export function Hero() {
           className="text-4xl md:text-6xl font-bold mb-4"
         >
           {t("greeting")}{" "}
-          <span className="text-[var(--accent)]">{personalInfo.displayName}</span>
+          <span className="text-[var(--accent)]">
+            {personalInfo.displayName}
+          </span>
         </motion.h1>
 
         <motion.div

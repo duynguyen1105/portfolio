@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Calendar, Briefcase, GraduationCap } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Briefcase,
+  GraduationCap,
+} from "lucide-react";
 import { personalInfo } from "@/data/personal";
 import { useTranslations } from "next-intl";
 
@@ -35,7 +42,7 @@ export function About() {
   ];
 
   const stats = [
-    { icon: Briefcase, value: "3+", label: t("stats.yearsExperience") },
+    { icon: Briefcase, value: "5+", label: t("stats.yearsExperience") },
     { icon: GraduationCap, value: "4", label: t("stats.companiesWorked") },
   ];
 
@@ -83,7 +90,7 @@ export function About() {
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="flex gap-8 mt-8"
+              className="flex gap-8 mt-8 justify-center"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">

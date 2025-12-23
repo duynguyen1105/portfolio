@@ -95,14 +95,14 @@ export function Experience() {
                   }`}
                 >
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      {index % 2 !== 0 && (
-                        <span className="text-[var(--accent)] mt-1">•</span>
-                      )}
+                    <li
+                      key={i}
+                      className={`flex items-start gap-2 ${
+                        index % 2 === 0 ? "md:flex-row-reverse" : ""
+                      }`}
+                    >
+                      <span className="text-[var(--accent)] mt-1">•</span>
                       <span className="flex-1">{achievement}</span>
-                      {index % 2 === 0 && (
-                        <span className="text-[var(--accent)] mt-1">•</span>
-                      )}
                     </li>
                   ))}
                 </ul>

@@ -38,8 +38,8 @@ export function Skills() {
   const getCategoryTitle = (title: string) => {
     const titleMap: Record<string, string> = {
       "Programming Languages": t("categories.programmingLanguages"),
-      "Frontend": t("categories.frontend"),
-      "Backend": t("categories.backend"),
+      Frontend: t("categories.frontend"),
+      Backend: t("categories.backend"),
       "Tools & Cloud": t("categories.toolsCloud"),
     };
     return titleMap[title] || title;
@@ -51,14 +51,17 @@ export function Skills() {
       "English Communication": t("soft.englishCommunication"),
       "Task Management": t("soft.taskManagement"),
       "Team Collaboration": t("soft.teamCollaboration"),
-      "Documentation": t("soft.documentation"),
+      Documentation: t("soft.documentation"),
       "Problem Solving": t("soft.problemSolving"),
     };
     return skillMap[skill] || skill;
   };
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--card)]">
+    <section
+      id="skills"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--card)]"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +96,9 @@ export function Skills() {
                       <Icon className="w-6 h-6 text-[var(--accent)]" />
                     </div>
                   )}
-                  <h3 className="font-semibold">{getCategoryTitle(category.title)}</h3>
+                  <h3 className="font-semibold">
+                    {getCategoryTitle(category.title)}
+                  </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
@@ -117,7 +122,7 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center"
+          className="flex flex-col items-center justify-center mb-16 gap-4"
         >
           <h3 className="text-xl font-semibold mb-4">{t("softSkills")}</h3>
           <div className="flex flex-wrap justify-center gap-3">

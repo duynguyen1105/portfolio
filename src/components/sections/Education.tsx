@@ -2,14 +2,25 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap, Award, CheckCircle } from "lucide-react";
-import { education, certificates } from "@/data/education";
+import { certificates, type Education } from "@/data/education";
 import { useTranslations } from "next-intl";
 
 export function Education() {
   const t = useTranslations("education");
 
+  const education: Education = {
+    school: t("university"),
+    degree: t("degree"),
+    field: t("field"),
+    grade: t("grade"),
+    period: t("period"),
+  };
+
   return (
-    <section id="education" className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--card)]">
+    <section
+      id="education"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--card)]"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,8 +55,8 @@ export function Education() {
               </div>
             </div>
 
-            <h4 className="text-lg font-semibold mb-2">{education.school}</h4>
-            <div className="space-y-2 text-[var(--muted-foreground)]">
+            <h4 className="text-lg font-semibold">{education.school}</h4>
+            <div className="flex gap-1 mt-1 flex-col text-[var(--muted-foreground)]">
               <p>
                 <span className="font-medium text-[var(--foreground)]">
                   {t("labels.degree")}

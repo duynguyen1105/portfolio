@@ -14,7 +14,7 @@
     "learnMore": "Learn More",
     "roles": {
       "softwareEngineer": "Software Engineer",
-      "fullStackDeveloper": "Full-Stack Developer",
+      "frontendEngineer": "Frontend Engineer",
       "problemSolver": "Problem Solver"
     }
   },
@@ -62,7 +62,12 @@
       "degree": "Degree:",
       "field": "Field:",
       "grade": "Grade:"
-    }
+    },
+    "university": "Ho Chi Minh City University of Technology",
+    "degree": "Bachelor of Engineering",
+    "field": "Computer Science",
+    "grade": "Good",
+    "period": "2017 - 2021"
   },
   "contact": {
     "title": "Get In Touch",

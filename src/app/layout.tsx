@@ -16,7 +16,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Duy Nguyen | Software Engineer",
   description:
-    "Software Engineer with 3+ years of experience in full-stack and front-end development. Skilled in Node.js, React.js, TypeScript, and AWS services.",
+    "Software Engineer with 5+ years of experience in full-stack and front-end development. Skilled in Node.js, React.js, TypeScript, and AWS services.",
   keywords: [
     "Software Engineer",
     "Frontend Developer",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Duy Nguyen | Software Engineer",
     description:
-      "Software Engineer with 3+ years of experience in full-stack and front-end development.",
+      "Software Engineer with 5+ years of experience in full-stack and front-end development.",
     type: "website",
   },
 };

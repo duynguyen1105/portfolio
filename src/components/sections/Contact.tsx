@@ -20,8 +20,18 @@ export function Contact() {
   const t = useTranslations("contact");
 
   const contactInfo = [
-    { icon: Mail, label: t("form.email"), value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-    { icon: Phone, label: t("form.name"), value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
+    {
+      icon: Mail,
+      label: t("form.email"),
+      value: personalInfo.email,
+      href: `mailto:${personalInfo.email}`,
+    },
+    {
+      icon: Phone,
+      label: t("form.name"),
+      value: personalInfo.phone,
+      href: `tel:${personalInfo.phone}`,
+    },
     { icon: MapPin, label: "Location", value: personalInfo.location },
   ];
 
@@ -51,11 +61,11 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="flex flex-col items-center justify-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t("title")}</h2>
           <div className="w-20 h-1 bg-[var(--accent)] mx-auto rounded-full mb-4" />
-          <p className="text-[var(--muted-foreground)] max-w-md mx-auto">
+          <p className="text-[var(--muted-foreground)] max-w-md mx-auto text-center">
             {t("subtitle")}
           </p>
         </motion.div>
@@ -68,8 +78,8 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-bold mb-6">{t("contactInfo")}</h3>
-            <div className="space-y-4">
+            <h3 className="text-xl font-bold ">{t("contactInfo")}</h3>
+            <div className="space-y-4 mt-6">
               {contactInfo.map((item) => (
                 <motion.div
                   key={item.label}
@@ -114,7 +124,9 @@ export function Contact() {
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.name.message}
+                  </p>
                 )}
               </div>
 
@@ -131,30 +143,40 @@ export function Contact() {
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.email.message}
+                  </p>
                 )}
               </div>
 
               <div>
                 <input
-                  {...register("subject", { required: t("errors.subjectRequired") })}
+                  {...register("subject", {
+                    required: t("errors.subjectRequired"),
+                  })}
                   placeholder={t("form.subject")}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all"
                 />
                 {errors.subject && (
-                  <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.subject.message}
+                  </p>
                 )}
               </div>
 
               <div>
                 <textarea
-                  {...register("message", { required: t("errors.messageRequired") })}
+                  {...register("message", {
+                    required: t("errors.messageRequired"),
+                  })}
                   placeholder={t("form.message")}
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--card)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 focus:outline-none transition-all resize-none"
                 />
                 {errors.message && (
-                  <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.message.message}
+                  </p>
                 )}
               </div>
 

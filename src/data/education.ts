@@ -12,14 +12,6 @@ export interface Certificate {
   year?: string;
 }
 
-export const education: Education = {
-  school: "Ho Chi Minh City University of Technology",
-  degree: "Bachelor",
-  field: "Computer Science",
-  grade: "Good",
-  period: "2017 - 2021",
-};
-
 export const certificates: Certificate[] = [
   {
     name: "TOEIC 750",

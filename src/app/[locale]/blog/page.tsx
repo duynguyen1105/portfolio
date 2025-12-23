@@ -37,10 +37,10 @@ export default function BlogPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="flex flex-col items-center justify-center mb-16 gap-4"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h1>
-          <p className="text-[var(--muted-foreground)] max-w-md mx-auto">
+          <p className="text-[var(--muted-foreground)] max-w-md mx-auto text-center">
             {t("subtitle")}
           </p>
         </motion.div>
