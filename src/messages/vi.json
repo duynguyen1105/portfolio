@@ -21,7 +21,7 @@
   "about": {
     "title": "Về tôi",
     "subtitle": "Xin chào!",
-    "bio1": "Tôi là một Kỹ sư phần mềm tại TP. Hồ Chí Minh với hơn 3 năm kinh nghiệm trong phát triển full-stack và front-end. Tôi đam mê xây dựng các ứng dụng có khả năng mở rộng và cải thiện codebase bằng các công nghệ hiện đại như Node.js, React.js, TypeScript và các dịch vụ AWS.",
+    "bio1": "Tôi là một Kỹ sư phần mềm tại TP. Hồ Chí Minh với hơn 5 năm kinh nghiệm trong phát triển full-stack và front-end. Tôi đam mê xây dựng các ứng dụng có khả năng mở rộng và cải thiện codebase bằng các công nghệ hiện đại như Node.js, React.js, TypeScript và các dịch vụ AWS.",
     "bio2": "Hiện đang làm việc tại Raksul Vietnam với sản phẩm SaaS JOSYS, nơi tôi phụ trách cả phát triển Front-end và Back-end. Tôi thích giải quyết các vấn đề phức tạp và tạo ra các công cụ cải thiện hiệu suất làm việc của team.",
     "stats": {
       "yearsExperience": "Năm kinh nghiệm",

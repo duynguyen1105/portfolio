@@ -10,7 +10,7 @@ export const personalInfo = {
     "I'm a Software Engineer based in Ho Chi Minh City with over 3 years of experience in full-stack and front-end development. I'm passionate about building scalable applications and improving codebases using modern technologies like Node.js, React.js, TypeScript, and AWS services.",
     "Currently working at Raksul Vietnam on the JOSYS SaaS product, where I handle both Front-end and Back-end development. I enjoy solving complex problems and creating tools that improve team efficiency.",
   ],
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar1.jpg",
   resumeUrl: "#",
 };
 

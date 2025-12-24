@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     "Ho Chi Minh City",
   ],
   authors: [{ name: "Nguyen Duy Nguyen" }],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: {
     title: "Duy Nguyen | Software Engineer",
     description:
       "Software Engineer with 5+ years of experience in full-stack and front-end development.",
     type: "website",
+    siteName: "Duy Nguyen Portfolio",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Duy Nguyen | Software Engineer",
+    description:
+      "Software Engineer with 5+ years of experience in full-stack and front-end development.",
   },
 };
 
